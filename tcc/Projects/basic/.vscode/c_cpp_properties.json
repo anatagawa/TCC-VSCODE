@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "c:/raylib/mingw/i686-w64-mingw32/include/**"
+                "c:/tcc/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +14,7 @@
                 "PLATFORM_DESKTOP"
             ],
             "windowsSdkVersion": "10.0.17134.0",
-            "compilerPath": "C:/raylib/mingw/bin/gcc.exe",
+            "compilerPath": "c:/tcc/tcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "intelliSenseMode": "msvc-x64"
