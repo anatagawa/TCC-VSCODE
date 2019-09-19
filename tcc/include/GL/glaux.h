@@ -1,7 +1,7 @@
 /**
  * This file has no copyright assigned and is placed in the Public Domain.
- * This file is part of the mingw-w64 runtime package.
- * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ * This file is part of the w64 mingw-runtime package.
+ * No warranty is given; refer to the file DISCLAIMER within this package.
  */
 #ifndef __GLAUX_H__
 #define __GLAUX_H__
@@ -164,107 +164,107 @@ typedef struct _AUX_RGBImageRec {
     unsigned char *data;
 } AUX_RGBImageRec;
 
-void APIENTRY auxInitDisplayMode(GLenum);
-void APIENTRY auxInitPosition(int,int,int,int);
+void WINAPI auxInitDisplayMode(GLenum);
+void WINAPI auxInitPosition(int,int,int,int);
 
 #ifdef UNICODE
 #define auxInitWindow auxInitWindowW
 #else
 #define auxInitWindow auxInitWindowA
 #endif
-GLenum APIENTRY auxInitWindowA(LPCSTR);
-GLenum APIENTRY auxInitWindowW(LPCWSTR);
+GLenum WINAPI auxInitWindowA(LPCSTR);
+GLenum WINAPI auxInitWindowW(LPCWSTR);
 
-void APIENTRY auxCloseWindow(void);
-void APIENTRY auxQuit(void);
-void APIENTRY auxSwapBuffers(void);
+void WINAPI auxCloseWindow(void);
+void WINAPI auxQuit(void);
+void WINAPI auxSwapBuffers(void);
 
 typedef void (CALLBACK *AUXMAINPROC)(void);
-void APIENTRY auxMainLoop(AUXMAINPROC);
+void WINAPI auxMainLoop(AUXMAINPROC);
 
 typedef void (CALLBACK *AUXEXPOSEPROC)(int,int);
-void APIENTRY auxExposeFunc(AUXEXPOSEPROC);
+void WINAPI auxExposeFunc(AUXEXPOSEPROC);
 
 typedef void (CALLBACK *AUXRESHAPEPROC)(GLsizei,GLsizei);
-void APIENTRY auxReshapeFunc(AUXRESHAPEPROC);
+void WINAPI auxReshapeFunc(AUXRESHAPEPROC);
 
 typedef void (CALLBACK *AUXIDLEPROC)(void);
-void APIENTRY auxIdleFunc(AUXIDLEPROC);
+void WINAPI auxIdleFunc(AUXIDLEPROC);
 
 typedef void (CALLBACK *AUXKEYPROC)(void);
-void APIENTRY auxKeyFunc(int,AUXKEYPROC);
+void WINAPI auxKeyFunc(int,AUXKEYPROC);
 
 typedef void (CALLBACK *AUXMOUSEPROC)(AUX_EVENTREC *);
-void APIENTRY auxMouseFunc(int,int,AUXMOUSEPROC);
+void WINAPI auxMouseFunc(int,int,AUXMOUSEPROC);
 
-int APIENTRY auxGetColorMapSize(void);
-void APIENTRY auxGetMouseLoc(int *,int *);
-void APIENTRY auxSetOneColor(int,float,float,float);
-void APIENTRY auxSetFogRamp(int,int);
-void APIENTRY auxSetGreyRamp(void);
-void APIENTRY auxSetRGBMap(int,float *);
+int WINAPI auxGetColorMapSize(void);
+void WINAPI auxGetMouseLoc(int *,int *);
+void WINAPI auxSetOneColor(int,float,float,float);
+void WINAPI auxSetFogRamp(int,int);
+void WINAPI auxSetGreyRamp(void);
+void WINAPI auxSetRGBMap(int,float *);
 
 #ifdef UNICODE
 #define auxRGBImageLoad auxRGBImageLoadW
 #else
 #define auxRGBImageLoad auxRGBImageLoadA
 #endif
-AUX_RGBImageRec *APIENTRY auxRGBImageLoadA(LPCSTR);
-AUX_RGBImageRec *APIENTRY auxRGBImageLoadW(LPCWSTR);
+AUX_RGBImageRec *WINAPI auxRGBImageLoadA(LPCSTR);
+AUX_RGBImageRec *WINAPI auxRGBImageLoadW(LPCWSTR);
 
 #ifdef UNICODE
 #define auxDIBImageLoad auxDIBImageLoadW
 #else
 #define auxDIBImageLoad auxDIBImageLoadA
 #endif
-AUX_RGBImageRec *APIENTRY auxDIBImageLoadA(LPCSTR);
-AUX_RGBImageRec *APIENTRY auxDIBImageLoadW(LPCWSTR);
+AUX_RGBImageRec *WINAPI auxDIBImageLoadA(LPCSTR);
+AUX_RGBImageRec *WINAPI auxDIBImageLoadW(LPCWSTR);
 
-void APIENTRY auxCreateFont(void);
+void WINAPI auxCreateFont(void);
 
 #ifdef UNICODE
 #define auxDrawStr auxDrawStrW
 #else
 #define auxDrawStr auxDrawStrA
 #endif
-void APIENTRY auxDrawStrA(LPCSTR);
-void APIENTRY auxDrawStrW(LPCWSTR);
+void WINAPI auxDrawStrA(LPCSTR);
+void WINAPI auxDrawStrW(LPCWSTR);
 
-void APIENTRY auxWireSphere(GLdouble);
-void APIENTRY auxSolidSphere(GLdouble);
-void APIENTRY auxWireCube(GLdouble);
-void APIENTRY auxSolidCube(GLdouble);
-void APIENTRY auxWireBox(GLdouble,GLdouble,GLdouble);
-void APIENTRY auxSolidBox(GLdouble,GLdouble,GLdouble);
-void APIENTRY auxWireTorus(GLdouble,GLdouble);
-void APIENTRY auxSolidTorus(GLdouble,GLdouble);
-void APIENTRY auxWireCylinder(GLdouble,GLdouble);
-void APIENTRY auxSolidCylinder(GLdouble,GLdouble);
-void APIENTRY auxWireIcosahedron(GLdouble);
-void APIENTRY auxSolidIcosahedron(GLdouble);
-void APIENTRY auxWireOctahedron(GLdouble);
-void APIENTRY auxSolidOctahedron(GLdouble);
-void APIENTRY auxWireTetrahedron(GLdouble);
-void APIENTRY auxSolidTetrahedron(GLdouble);
-void APIENTRY auxWireDodecahedron(GLdouble);
-void APIENTRY auxSolidDodecahedron(GLdouble);
-void APIENTRY auxWireCone(GLdouble,GLdouble);
-void APIENTRY auxSolidCone(GLdouble,GLdouble);
-void APIENTRY auxWireTeapot(GLdouble);
-void APIENTRY auxSolidTeapot(GLdouble);
+void WINAPI auxWireSphere(GLdouble);
+void WINAPI auxSolidSphere(GLdouble);
+void WINAPI auxWireCube(GLdouble);
+void WINAPI auxSolidCube(GLdouble);
+void WINAPI auxWireBox(GLdouble,GLdouble,GLdouble);
+void WINAPI auxSolidBox(GLdouble,GLdouble,GLdouble);
+void WINAPI auxWireTorus(GLdouble,GLdouble);
+void WINAPI auxSolidTorus(GLdouble,GLdouble);
+void WINAPI auxWireCylinder(GLdouble,GLdouble);
+void WINAPI auxSolidCylinder(GLdouble,GLdouble);
+void WINAPI auxWireIcosahedron(GLdouble);
+void WINAPI auxSolidIcosahedron(GLdouble);
+void WINAPI auxWireOctahedron(GLdouble);
+void WINAPI auxSolidOctahedron(GLdouble);
+void WINAPI auxWireTetrahedron(GLdouble);
+void WINAPI auxSolidTetrahedron(GLdouble);
+void WINAPI auxWireDodecahedron(GLdouble);
+void WINAPI auxSolidDodecahedron(GLdouble);
+void WINAPI auxWireCone(GLdouble,GLdouble);
+void WINAPI auxSolidCone(GLdouble,GLdouble);
+void WINAPI auxWireTeapot(GLdouble);
+void WINAPI auxSolidTeapot(GLdouble);
 
-HWND APIENTRY auxGetHWND(void);
-HDC APIENTRY auxGetHDC(void);
-HGLRC APIENTRY auxGetHGLRC(void);
+HWND WINAPI auxGetHWND(void);
+HDC WINAPI auxGetHDC(void);
+HGLRC WINAPI auxGetHGLRC(void);
 
 enum {
     AUX_USE_ID = 1,AUX_EXACT_MATCH,AUX_MINIMUM_CRITERIA
 };
-void APIENTRY auxInitDisplayModePolicy(GLenum);
-GLenum APIENTRY auxInitDisplayModeID(GLint);
-GLenum APIENTRY auxGetDisplayModePolicy(void);
-GLint APIENTRY auxGetDisplayModeID(void);
-GLenum APIENTRY auxGetDisplayMode(void);
+void WINAPI auxInitDisplayModePolicy(GLenum);
+GLenum WINAPI auxInitDisplayModeID(GLint);
+GLenum WINAPI auxGetDisplayModePolicy(void);
+GLint WINAPI auxGetDisplayModeID(void);
+GLenum WINAPI auxGetDisplayMode(void);
 
 #ifdef __cplusplus
 }
